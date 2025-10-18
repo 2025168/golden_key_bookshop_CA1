@@ -182,7 +182,16 @@ nav a:hover, nav a.active {
     justify-content: center;
     color: var(--gray);
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Add this */
 }
+
+.product-image[style*="background-image"] div:first-child {
+    display: none;
+}
+
+
 
 .product-badge {
     position: absolute;
