@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GK bookshop</title>
+    <title>Products - GK Bookshop</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="container">
         <div class="header-content">
-          <a href="index.html" class="logo"> GOLDEN KEY BOOKSHOP </a>
-
+          <a href="index.html" class="logo">GOLDEN KEY BOOKSHOP</a>
           <nav>
             <ul>
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="products.html">Products</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html" class="active">Products</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -25,28 +23,17 @@
       </div>
     </header>
 
-    <!-- Book Section -->
-    <section class="book">
-      <div class="container book-content">
-        <h1>Every book is a new beginning.</h1>
-        <p>
-          From bestsellers to hidden gems, find the perfect read for any mood or
-          moment.
-        </p>
-        <a href="products.html" class="btn btn-primary">Browse Books</a>
-      </div>
-    </section>
-
-    <!-- Main Content -->
     <main class="container">
       <section class="section">
-        <h2 class="section-title">Bestseller books</h2>
+        <h2 class="section-title">All Books</h2>
+
         <div class="products-row">
           <div class="product-card">
             <div
               class="product-image"
               style="background-image: url('./img/best_book_1.png')"
             >
+              <div>Book Cover</div>
               <div class="product-badge">Bestseller</div>
             </div>
             <div class="product-info">
@@ -58,13 +45,13 @@
               </div>
             </div>
           </div>
+
           <div class="product-card">
             <div
               class="product-image"
               style="background-image: url('./img/best_book_2.png')"
             >
               <div>Book Cover</div>
-              <div class="product-badge">Bestseller</div>
             </div>
             <div class="product-info">
               <h3 class="product-title">Pride and Prejudice</h3>
@@ -85,7 +72,7 @@
               <div class="product-badge">New</div>
             </div>
             <div class="product-info">
-              <h3 class="product-title">1984 Nineteen Eighty Four</h3>
+              <h3 class="product-title">1984</h3>
               <p class="product-author">by George Orwell</p>
               <div class="product-price">€23</div>
               <div class="product-actions">
@@ -110,19 +97,38 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <h2 class="section-title">Fiction</h2>
+        <div class="products-row">
+          <div class="product-card">
+            <div
+              class="product-image"
+              style="background-image: url('./img/fiction_2.jpg')"
+            >
+              <div>Book Cover</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Lord of the Rings</h3>
+              <p class="product-author">by J.R.R. Tolkien</p>
+              <div class="product-price">€28</div>
+              <div class="product-actions">
+                <button class="btn btn-small">Add to Cart</button>
+              </div>
+            </div>
+          </div>
 
           <div class="product-card">
             <div
               class="product-image"
-              style="background-image: url('./img/best_book_5.png')"
+              style="background-image: url('./img/fiction_3.jpg')"
             >
               <div>Book Cover</div>
-              <div class="product-badge">Sale</div>
             </div>
             <div class="product-info">
-              <h3 class="product-title">The Alchemist</h3>
-              <p class="product-author">by Paulo Coelho</p>
-              <div class="product-price">€30</div>
+              <h3 class="product-title">The Hobbit</h3>
+              <p class="product-author">by J.R.R. Tolkien</p>
+              <div class="product-price">€22</div>
               <div class="product-actions">
                 <button class="btn btn-small">Add to Cart</button>
               </div>
@@ -132,15 +138,13 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>Golden Key Bookshop</h3>
-            <p>Find your next adventure!</p>
+            <p>Your gateway to wonderful stories</p>
           </div>
-
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
@@ -150,7 +154,6 @@
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-
           <div class="footer-section">
             <h3>Contact Info</h3>
             <ul>
@@ -170,7 +173,6 @@
             </ul>
           </div>
         </div>
-
         <div class="copyright">
           <p>&copy; 2025 Golden Key Bookshop. All rights reserved.</p>
         </div>

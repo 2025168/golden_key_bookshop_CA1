@@ -36,6 +36,7 @@ body {
 header {
     background-color: whitesmoke;
     box-shadow: var(--shadow);
+    /* Make the header always on top using sticky value */
     position: sticky;
     top: 0;
     z-index: 100;
