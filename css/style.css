@@ -1,35 +1,35 @@
 /* Defining global variables */
 :root {
-    --primary: #2C5F93;
-    --primary-dark: #1E3F66;
-    --secondary: #C49A6C;
-    --accent: #E31837;
-    --light: #F8F9FA;
-    --dark: #212529;
-    --gray: #6C757D;
-    --gray-light: #E9ECEF;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --radius: 4px;
+    --primary: #2C5F93; 
+    --primary-dark: #1E3F66; /* Darker blue for headers/footer */
+    --secondary: #C49A6C; /* Gold accent color */
+    --accent: #E31837; /* Red for badges/special elements */
+    --light: #F8F9FA; /* Page background */
+    --dark: #212529; /* Main text color */
+    --gray: #6C757D; /* Secondary text */
+    --gray-light: #E9ECEF; /* Light backgrounds */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Card shadows */
+    --radius: 4px; /* Border radius */
 }
 
 /* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding included in width/height */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: var(--light);
     color: var(--dark);
-    line-height: 1.6;
+    line-height: 1.6; /* Better text readability */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    max-width: 1200px; /* Maximum content width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Padding on mobile */
 }
 
 /* Header Styles */
@@ -39,13 +39,13 @@ header {
     /* Make the header always on top using sticky value */
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 100; /* Ensure header stays above other content */
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Logo left, navigation right */
+    align-items: center; /* Vertical center alignment */
     padding: 15px 0;
 }
 
@@ -59,24 +59,24 @@ header {
 }
 
 .logo i {
-    margin-right: 10px;
+    margin-right: 10px; /* Space between icon and text */
     color: var(--secondary);
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
+    display: flex; /* Horizontal navigation */
+    list-style: none; /* Remove bullet points */
 }
 
 nav li {
-    margin-left: 25px;
+    margin-left: 25px; /* Space between nav items */
 }
 
 nav a {
     color: var(--dark);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Smooth color transition */
     padding: 5px 10px;
     border-radius: var(--radius);
 }
@@ -89,8 +89,8 @@ nav a:hover, nav a.active {
 /* Book Section */
 .book {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/header_bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Cover entire section with image */
+    background-position: center; /* Center the background image */
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -99,7 +99,7 @@ nav a:hover, nav a.active {
 
 .book-content {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the content */
 }
 
 .book h1 {
@@ -121,13 +121,13 @@ nav a:hover, nav a.active {
     border-radius: var(--radius);
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s; /* Smooth transition for all properties */
     text-decoration: none;
 }
 
 .btn:hover {
     background-color: #b3865c;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 .btn-primary {
@@ -147,7 +147,7 @@ nav a:hover, nav a.active {
     font-size: 1.8rem;
     margin-bottom: 25px;
     color: var(--primary);
-    border-bottom: 2px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary); /* Underline effect */
     padding-bottom: 10px;
     display: inline-block;
 }
@@ -155,8 +155,8 @@ nav a:hover, nav a.active {
 /* Single Row Products */
 .products-row {
     display: flex;
-    gap: 25px;
-    overflow-x: auto;
+    gap: 25px; /* Space between product cards */
+    overflow-x: auto; /* Horizontal scrolling if needed */
     padding: 10px 0;
     margin-bottom: 40px;
 }
@@ -164,15 +164,16 @@ nav a:hover, nav a.active {
 .product-card {
     background: white;
     border-radius: var(--radius);
-    overflow: hidden;
+    overflow: hidden; /* Prevent content from overflowing rounded corners */
     box-shadow: var(--shadow);
-    transition: transform 0.3s;
-    min-width: 200px;
-    flex-shrink: 0;
+    transition: transform 0.3s; /* Smooth hover animation */
+    min-width: 200px; /* Minimum card width */
+    flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
+/* When the cursor click on the product it moves to -5px distance vertically */
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift card on hover */
 }
 
 .product-image {
@@ -183,19 +184,17 @@ nav a:hover, nav a.active {
     justify-content: center;
     color: var(--gray);
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; /* Add this */
+    background-size: cover; /* Cover entire image area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Add this - Prevent image repeating */
 }
 
 .product-image[style*="background-image"] div:first-child {
-    display: none;
+    display: none; /* Hide "Book Cover" text when image is present */
 }
 
-
-
 .product-badge {
-    position: absolute;
+    position: absolute; /* Position relative to product-image */
     top: 10px;
     right: 10px;
     background-color: var(--accent);
@@ -232,7 +231,7 @@ nav a:hover, nav a.active {
 
 .product-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space out action buttons */
 }
 
 .btn-small {
@@ -268,7 +267,7 @@ nav a:hover, nav a.active {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the form */
 }
 
 .form-group {
@@ -276,7 +275,7 @@ nav a:hover, nav a.active {
 }
 
 .form-group label {
-    display: block;
+    display: block; /* Labels on their own line */
     margin-bottom: 8px;
     font-weight: 500;
 }
@@ -287,25 +286,25 @@ nav a:hover, nav a.active {
     border: 1px solid #ddd;
     border-radius: var(--radius);
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s; /* Smooth border color change */
 }
 
 .form-control:focus {
-    outline: none;
+    outline: none; /* Remove default browser outline */
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(44, 95, 147, 0.2);
+    box-shadow: 0 0 0 2px rgba(44, 95, 147, 0.2); /* Blue glow effect */
 }
 
 textarea.form-control {
-    min-height: 120px;
-    resize: vertical;
+    min-height: 120px; /* Minimum textarea height */
+    resize: vertical; /* Allow only vertical resizing */
 }
 
 .error-message {
     color: #d32f2f;
     font-size: 0.9rem;
     margin-top: 5px;
-    display: none;
+    display: none; /* Hidden by default, shown when there's an error */
 }
 
 /* Footer */
@@ -318,8 +317,8 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between columns */
     margin-bottom: 30px;
 }
 
@@ -330,7 +329,7 @@ footer {
 }
 
 .footer-section ul {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
 }
 
 .footer-section li {
@@ -340,7 +339,7 @@ footer {
 .footer-section a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Smooth color transition */
 }
 
 .footer-section a:hover {
@@ -350,9 +349,9 @@ footer {
 .copyright {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent text */
 }
 
 /* Validation error message style */
@@ -360,5 +359,5 @@ footer {
     color: #E31837;
     font-size: 0.9rem;
     margin-top: 5px;
-    display: none;
+    display: none; /* Hidden until validation fails */
 }
