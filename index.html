@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Essential for responsive design - makes site work on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GK bookshop</title>
+    <!-- Links external CSS file for styling -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header Section - Contains logo and navigation -->
     <header>
+      <!-- Container centers content and sets max width -->
       <div class="container">
+        <!-- Flexbox layout for header content -->
         <div class="header-content">
+          <!-- Logo links back to homepage -->
           <a href="index.html" class="logo"> GOLDEN KEY BOOKSHOP </a>
 
+          <!-- Main navigation menu -->
           <nav>
             <ul>
+              <!-- 'active' class highlights current page -->
               <li><a href="index.html" class="active">Home</a></li>
               <li><a href="products.html">Products</a></li>
               <li><a href="about.html">About</a></li>
@@ -25,7 +32,7 @@
       </div>
     </header>
 
-    <!-- Book Section -->
+    <!-- Banner section with background image -->
     <section class="book">
       <div class="container book-content">
         <h1>Every book is a new beginning.</h1>
@@ -33,20 +40,25 @@
           From bestsellers to hidden gems, find the perfect read for any mood or
           moment.
         </p>
+        <!-- Call-to-action button with primary styling -->
         <a href="products.html" class="btn btn-primary">Browse Books</a>
       </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Main content area -->
     <main class="container">
       <section class="section">
         <h2 class="section-title">Bestseller books</h2>
+        <!-- Horizontal scrolling product row -->
         <div class="products-row">
+          <!-- Individual product card -->
           <div class="product-card">
+            <!-- Background image applied via inline style -->
             <div
               class="product-image"
               style="background-image: url('./img/best_book_1.png')"
             >
+              <!-- Badge positioned absolutely within product image -->
               <div class="product-badge">Bestseller</div>
             </div>
             <div class="product-info">
@@ -54,15 +66,19 @@
               <p class="product-author">by George Orwell</p>
               <div class="product-price">€20</div>
               <div class="product-actions">
+                <!-- Interactive button for cart functionality -->
                 <button class="btn btn-small">Add to Cart</button>
               </div>
             </div>
           </div>
+
+          <!-- Additional product cards follow same structure -->
           <div class="product-card">
             <div
               class="product-image"
               style="background-image: url('./img/best_book_2.png')"
             >
+              <!-- This 'Book Cover' text should be hidden by CSS when image loads -->
               <div>Book Cover</div>
               <div class="product-badge">Bestseller</div>
             </div>
@@ -75,69 +91,18 @@
               </div>
             </div>
           </div>
-
-          <div class="product-card">
-            <div
-              class="product-image"
-              style="background-image: url('./img/best_book_3.png')"
-            >
-              <div>Book Cover</div>
-              <div class="product-badge">New</div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">1984 Nineteen Eighty Four</h3>
-              <p class="product-author">by George Orwell</p>
-              <div class="product-price">€23</div>
-              <div class="product-actions">
-                <button class="btn btn-small">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div
-              class="product-image"
-              style="background-image: url('./img/best_book_4.png')"
-            >
-              <div>Book Cover</div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Pumpkin Spice Cafe</h3>
-              <p class="product-author">by Laurie Gilmore</p>
-              <div class="product-price">€10</div>
-              <div class="product-actions">
-                <button class="btn btn-small">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div
-              class="product-image"
-              style="background-image: url('./img/best_book_5.png')"
-            >
-              <div>Book Cover</div>
-              <div class="product-badge">Sale</div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">The Alchemist</h3>
-              <p class="product-author">by Paulo Coelho</p>
-              <div class="product-price">€30</div>
-              <div class="product-actions">
-                <button class="btn btn-small">Add to Cart</button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
       <div class="container">
+        <!-- Responsive grid layout for footer sections -->
         <div class="footer-content">
           <div class="footer-section">
             <h3>Golden Key Bookshop</h3>
+            <!-- Brand slogan -->
             <p>Find your next adventure!</p>
           </div>
 
@@ -155,7 +120,7 @@
             <h3>Contact Info</h3>
             <ul>
               <li>
-                <!-- When the user click on the link the map shows on the new tab using target="_blank"-->
+                <!-- Google Maps link opens in a new tab -->
                 <a
                   href="https://maps.app.goo.gl/EVD5AR3fz7nk29sd6"
                   target="_blank"
@@ -171,6 +136,7 @@
           </div>
         </div>
 
+        <!-- Copyright notice -->
         <div class="copyright">
           <p>&copy; 2025 Golden Key Bookshop. All rights reserved.</p>
         </div>
