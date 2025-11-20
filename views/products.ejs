@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">GOLDEN KEY BOOKSHOP</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products" class="active">Products</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 class="section-title">All Books</h2>
+                
+                <!-- Category Filter -->
+                <div>
+                    <label for="category-filter">Filter by: </label>
+                    <select id="category-filter" onchange="filterByCategory(this.value)">
+                        <option value="all" <%= currentCategory === 'all' ? 'selected' : '' %>>All Categories</option>
+                        <% categories.forEach(cat => { %>
+                        <option value="<%= cat.category %>" 
+                                <%= currentCategory === cat.category ? 'selected' : '' %>>
+                            <%= cat.category %>
+                        </option>
+                        <% }); %>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-row">
+                <% books.forEach(book => { %>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('<%= book.image_url %>')">
+                        <% if(book.badge) { %>
+                        <div class="product-badge"><%= book.badge %></div>
+                        <% } %>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title"><%= book.title %></h3>
+                        <p class="product-author">by <%= book.author %></p>
+                        <div class="product-price">€<%= book.price %></div>
+                        <div class="product-actions">
+                            <button class="btn btn-small add-to-cart" data-book-id="<%= book.id %>">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+
+            <% if (currentCategory !== 'all') { %>
+            <div style="margin-top: 40px;">
+                <h3>Other Categories</h3>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <a href="/products?category=all" class="btn btn-small">All Books</a>
+                    <% categories.forEach(cat => { %>
+                        <% if (cat.category !== currentCategory) { %>
+                        <a href="/products?category=<%= cat.category %>" class="btn btn-small">
+                            <%= cat.category %>
+                        </a>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.ejs -->
+    </footer>
+
+    <script>
+        function filterByCategory(category) {
+            window.location.href = `/products?category=${category}`;
+        }
+        
+        // Same cart script as index.ejs
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const bookId = this.getAttribute('data-book-id');
+                
+                fetch('/add-to-cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ bookId: bookId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message || 'Book added to cart!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
